@@ -1,0 +1,141 @@
+#social {
+    color: white;
+    padding-right: 23px;
+}
+
+.booking_container {
+    height: 110px;
+    width: 100%;
+    background: #ffffff;
+    margin-top: -320px;
+    padding-left: 40px;
+    padding-right: 42px;
+}
+
+.home_title h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #046414;
+    font-style: italic;
+    font-size: 72px;
+}
+
+.navbar-inverse {
+    background-color: #034626;
+    border-color: #034626;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0f6139;
+    z-index: 101;
+    border-bottom: solid 2px #0f6139;
+}
+
+.booking_form_button {
+    width: 280px;
+    height: 65px;
+    background: #0ae77c;
+    margin-left: 9px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    cursor: pointer;
+}
+
+.booking_container {
+    height: 110px;
+    width: 100%;
+    background: #157d4a;
+    margin-top: -320px;
+    padding-left: 40px;
+    padding-right: 42px;
+}
+
+.menu_overlay_content {
+    width: 70px;
+    height: 70px;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.menu_overlay .hamburger i {
+    color: #fdfdfd;
+}
+
+.menu_overlay {
+    position: fixed;
+    right: -90px;
+    top: 0;
+    background: #034626;
+    z-index: 102;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+    border-radius: 10px 10px 0px 33px;
+    -moz-border-radius: 10px 10px 0px 33px;
+    -webkit-border-radius: 10px 10px 0px 33px;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: #00000085;
+}
+
+.footer_bar {
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(249 249 249 / 94%);
+    background-color: #022b17;
+}
+
+.button {
+    width: 186px;
+    height: 65px;
+    background: #038345;
+    text-align: center;
+    border: solid 2px #022b17;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.rooms_price {
+    margin-top: 33px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #022b17;
+}
+
+.logininterfaz {
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: solid 2px #0f6139;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.registerinterfaz {
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: solid 2px #0f6139;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
