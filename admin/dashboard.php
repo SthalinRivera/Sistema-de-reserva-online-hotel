@@ -1,6 +1,26 @@
 <?php
 
-require_once("../includes/initialize.php"); ?>
+require_once("../includes/initialize.php");
+function contador()
+{
+    $archivo = "contador.txt"; //el archivo que contiene en numero
+    $f = fopen($archivo, "r"); //abrimos el archivo en modo de lectura
+    if($f)
+    {
+        $contador = fread($f, filesize($archivo)); //leemos el archivo
+        $contador = $contador + 1; //sumamos +1 al contador
+        fclose($f);
+    }
+    $f = fopen($archivo, "w+");
+    if($f)
+    {
+        fwrite($f, $contador);
+        fclose($f);
+    }
+    return $contador;
+}
+
+?>
 
 
  <!-- Main content -->
@@ -82,9 +102,9 @@ require_once("../includes/initialize.php"); ?>
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3><?php echo contador(); ?></h3>
 
-                                    <p>Unique Visitors</p>
+                                    <p>Visitantes</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>

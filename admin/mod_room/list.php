@@ -24,6 +24,7 @@
 				  		<th align="left"  width="200">Habitacion</th>	
 				  		<!-- <th align="left" width="120">Description</th> -->
 				  		<th align="left" width="120">Alojamiento</th> 
+						<!--  <th align="left" width="120">Piso</th> -->
 				  		<th align="left" width="90">Personas</th>
 				  		<th align="left"  width="200">Precio</th>
 				  		<!-- <th># of Rooms</th> -->
@@ -42,9 +43,11 @@
 				  				<img src="'. $result->ROOMIMAGE.'" width="60" height="40" title="'. $result->ROOM .'"/></td>';
 				  		// echo '<td><a href="index.php?view=edit&id='.$result->ROOMID.'">' . ' '.$result->ROOMNUM.'</a></td>';
 						echo '<td><a href="index.php?view=edit&id='.$result->ROOMID.'">'. $result->ROOM.' ('. $result->ROOMDESC.')</a></td>';
-				  		// echo '<td>'. $result->ROOMDESC.'</td>';
-						// echo '<td>'. $result->ACCOMODATION.' ('. $result->ACCOMDESC.')</td>';
-						echo '<td>'. $result->ACCOMODATION.'</td>';
+				  		// echo '<td>'. $result->ROOMDESC.'</td>';ACCOMDESC
+						echo '<td>'. $result->ACCOMODATION.' ('. $result->ACCOMDESC.')</td>';
+						//echo '<td>'. $result->ACCOMODATION.'</td>';
+						//echo '<td>'. $result->ACCOMODATION.'</td>';
+						
 				  		echo '<td>'. $result->NUMPERSON.'</td>';
 				  		
 				  		echo '<td> S/. '. $result->PRICE.'</td>';

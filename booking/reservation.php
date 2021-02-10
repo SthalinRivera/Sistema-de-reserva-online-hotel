@@ -116,7 +116,7 @@ $result=$guest->single_guest($guestid);*/
             <tr>
               <td colspan="5"></td><td align="right"><h5><b>Order Total: </b></h5>
               <td align="left">
-              <h5><b> <?php echo '&euro;' . $payable= $days*$result->PRICE; ?></b></h5>
+              <h5><b> <?php echo 'S/.' . $payable= $days*$result->PRICE; ?></b></h5>
                            
               </td>
             </tr>

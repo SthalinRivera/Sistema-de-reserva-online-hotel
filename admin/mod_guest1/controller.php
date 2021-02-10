@@ -19,9 +19,9 @@ switch ($action) {
 	}
 function doInsert(){
 		
-	if ($_POST['G_FNAME'] == "" OR $_POST['G_PHONE'] == "" OR $_POST['G_EMAIL'] == "") {
+	if ($_POST['G_FNAME'] == "" ) {
 		$messageStats = false;
-			message("Todos los campos requeridos!", "error");
+			message("Todos los campos requeridossdasdsdas!", "error");
 			redirect("index.php");
 		
 	}else{
@@ -38,12 +38,15 @@ function doInsert(){
 			
 			
 			$guest = new Guest();
+			
 			$guest->G_FNAME= $_POST['G_FNAME'];
 			$guest->G_LNAME= $_POST['G_LNAME'];
 			$guest->G_ADDRESS= $_POST['G_ADDRESS'];
 			$guest->DBIRTH= $_POST['DBIRTH'];
 			$guest->G_PHONE= $_POST['G_PHONE'];
+			$guest->G_NATIONALITY= $_POST['G_NATIONALITY'];
 			$guest->G_EMAIL= $_POST['G_EMAIL'];
+			$guest->G_UNAME= $_POST['G_UNAME'];
 			
 			$istrue = $guest->create(); 
 
@@ -58,23 +61,23 @@ function doInsert(){
 	}	
 }
 function doEdit(){
-	if ($_POST['G_FNAME'] == "" OR $_POST['G_PHONE'] == "" OR $_POST['G_ADDRESS'] == "") {
+	if ($_POST['G_FNAME'] == "" OR $_POST['G_EMAIL'] == "" ) {
 		$messageStats = false;
 			message("Todos los campos requeridos!", "error");
 			redirect("index.php?view=edit&id=".$_SESSION['id']);
 		
 	}else{
 		$guest = new Guest();
-		$guest->G_FNAME= $_POST['G_FNAME'];
+		
+			$guest->G_FNAME= $_POST['G_FNAME'];
 			$guest->G_LNAME= $_POST['G_LNAME'];
-			$guest->G_ADDRESS= $_POST['G_ADDRESS'];
-			$guest->DBIRTH= $_POST['DBIRTH'];
 			$guest->G_PHONE= $_POST['G_PHONE'];
 			$guest->G_EMAIL= $_POST['G_EMAIL'];
+			$guest->G_UNAME= $_POST['G_UNAME'];
 			
-				
+			
 			 	message("[".  $_POST['G_FNAME'] ."] Actualizado con éxito!", "success");
-			 	// unset($_SESSION['id']);
+			 	unset($_SESSION['id']);
 			 	redirect('index.php');
 			
 

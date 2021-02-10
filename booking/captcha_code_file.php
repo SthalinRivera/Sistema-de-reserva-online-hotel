@@ -1,19 +1,5 @@
 <?php 
-/*
-*
-* this code is based on captcha code by Simon Jarvis 
-* http://www.white-hat-web-design.co.uk/articles/php-captcha.php
-*
-* This program is free software; you can redistribute it and/or 
-* modify it under the terms of the GNU General Public License 
-* as published by the Free Software Foundation
-*
-* This program is distributed in the hope that it will be useful, 
-* but WITHOUT ANY WARRANTY; without even the implied warranty of 
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
-* GNU General Public License for more details: 
-* http://www.gnu.org/licenses/gpl.html
-*/
+
 
 session_start();
 //Settings: You can customize the captcha here
@@ -21,9 +7,8 @@ $image_width = 120;
 $image_height = 40;
 $characters_on_image = 6;
 $font = 'monofont.ttf';
-
-//The characters that can be used in the CAPTCHA code.
-//avoid confusing characters (l 1 and i for example)
+// Los caracteres que se pueden utilizar en el código CAPTCHA.
+// evitar caracteres confusos (l 1 e i por ejemplo)
 $possible_letters = '23456789bcdfghjkmnpqrstvwxyzBCDFGHJKMNPQRSTVWXYZ';
 $random_dots = 0;
 $random_lines = 20;

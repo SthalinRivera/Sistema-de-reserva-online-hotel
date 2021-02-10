@@ -14,7 +14,6 @@ switch ($action) {
 	case 'editimage' :
 	editImg();
 	break;
-	
 	case 'delete' :
 	doDelete();
 	break;
@@ -30,11 +29,11 @@ function doInsert(){
 					redirect("index.php?view=add");
 				
 			}else{
-				$room = new Room();
+				$booked = new Booked();
 
  
 
-				$res = $room->find_all_room($_POST['ROOM']);
+				$res = $booked->find_all_room($_POST['ROOM']);
 				
 				
 				if ($res >=1) {
@@ -59,16 +58,16 @@ function doInsert(){
 						}
 				}
 					 
-				$room->ROOMNUM 		=	$_POST['ROOMNUM'];
-				$room->ROOM 		=	$_POST['ROOM'];
-				$room->ACCOMID 		=	$_POST['ACCOMID'];
-				$room->ROOMDESC 	=	$_POST['ROOMDESC'];
-				$room->NUMPERSON 	=	$_POST['NUMPERSON'];
-				$room->PRICE 		=	$_POST['PRICE'];
- 				$room->ROOMIMAGE    = $location;
- 				$room->OROOMNUM 	=	$_POST['ROOMNUM'];
+				$booked->ROOMNUM 		=	$_POST['ROOMNUM'];
+				$booked->ROOM 		=	$_POST['ROOM'];
+				$booked->ACCOMID 		=	$_POST['ACCOMID'];
+				$booked->ROOMDESC 	=	$_POST['ROOMDESC'];
+				$booked->NUMPERSON 	=	$_POST['NUMPERSON'];
+				$booked->PRICE 		=	$_POST['PRICE'];
+ 				$booked->ROOMIMAGE    = $location;
+ 				$booked->OROOMNUM 	=	$_POST['ROOMNUM'];
 					
-					 $istrue = $room->create(); 
+					 $istrue = $booked->create(); 
 					 if ($istrue == 1){
 					 	message("Nuevo [". $_POST['ROOM'] ."] creado con éxito!", "success");
 					 	redirect('index.php');
@@ -85,7 +84,7 @@ function doInsert(){
  function doEdit(){
 
 
-           		$room = new Room();
+           		$booked = new Room();
            		$location = '';
 				if(isset($_FILES['image']) && !empty($_FILES['image']['tmp_name'])){
 					$file=$_FILES['image']['tmp_name'];
@@ -103,17 +102,17 @@ function doInsert(){
 						$move = move_uploaded_file($image,"rooms/".$image_name);
 					}
 					}
-				$room->ROOMNUM 		=	$_POST['ROOMNUM'];
-				$room->ROOM 		=	$_POST['ROOM'];
-				$room->ACCOMID 		=	$_POST['ACCOMID'];
-				$room->ROOMDESC 	=	$_POST['ROOMDESC'];
-				$room->NUMPERSON 	=	$_POST['NUMPERSON'];
-				$room->PRICE 		=	$_POST['PRICE'];
-				$room->OROOMNUM 	=	$_POST['ROOMNUM'];
+				$booked->ROOMNUM 		=	$_POST['ROOMNUM'];
+				$booked->ROOM 		=	$_POST['ROOM'];
+				$booked->ACCOMID 		=	$_POST['ACCOMID'];
+				$booked->ROOMDESC 	=	$_POST['ROOMDESC'];
+				$booked->NUMPERSON 	=	$_POST['NUMPERSON'];
+				$booked->PRICE 		=	$_POST['PRICE'];
+				$booked->OROOMNUM 	=	$_POST['ROOMNUM'];
 				if(!empty($location))
- 				$room->ROOMIMAGE    = $location;
+ 				$booked->ROOMIMAGE    = $location;
 				
-				$room->update($_POST['ROOMID']); 
+				$booked->update($_POST['ROOMID']); 
 				
 			 	message($_POST['ROOM'] ." Actualizado con éxito!", "success");
 			 	unset($_SESSION['id']);
@@ -170,37 +169,12 @@ function editImg (){
 				 	 redirect("index.php");
  			}
  		}
+
+
+
  }			 
 
-function _deleteImage($catId)
-{
-    // we will return the status
-    // whether the image deleted successfully
-    $deleted = false;
 
-	// get the image(s)
-    $sql = "SELECT * 
-            FROM room
-            WHERE roomNo ";
-	
-	if (is_array($catId)) {
-		$sql .= " IN (" . implode(',', $catId) . ")";
-	} else {
-		$sql .= " = {$catId}";
-	}	
-
-    $result = dbQuery($sql);
-    
-    if (dbNumRows($result)) {
-        while ($row = dbFetchAssoc($result)) {
-		extract($row);
-	        // delete the image file
-    	    $deleted = @unlink($roomImage);
-		}	
-    }
-    
-return $deleted;
-}
 
 
 
